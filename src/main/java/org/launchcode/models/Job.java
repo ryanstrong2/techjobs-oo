@@ -8,11 +8,12 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
-    private String name;
-    private Employer employer;
-    private Location location;
-    private PositionType positionType;
-    private CoreCompetency coreCompetency;
+    public String name;
+    public Employer employer;
+    public Location location;
+    public PositionType positionType;
+    public CoreCompetency coreCompetency;
+    public Job request;
 
     public Job() {
         id = nextId;
@@ -32,40 +33,40 @@ public class Job {
 
     }
 
-    public String getName() {
-        return name;
+    public String getName(String name) {
+        return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public Employer getEmployer() {
-        return employer;
+    public Employer getEmployer(String employer) {
+        return this.employer;
     }
 
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
-    public Location getLocation() {
-        return location;
+    public Location getLocation(String location) {
+        return this.location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
     }
 
-    public PositionType getPositionType() {
-        return positionType;
+    public PositionType getPositionType(String positionType) {
+        return this.positionType;
     }
 
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
 
-    public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
+    public CoreCompetency getCoreCompetency(String coreCompetency) {
+        return this.coreCompetency;
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
@@ -90,4 +91,6 @@ public class Job {
     public int hashCode() {
         return id;
     }
+
+
 }

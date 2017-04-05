@@ -1,10 +1,8 @@
 package org.launchcode.models.data;
 
-import javafx.geometry.Pos;
 import org.launchcode.models.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by LaunchCode
@@ -65,7 +63,7 @@ public class JobData {
 
         for (Job job : jobs) {
 
-            if (job.getName().toLowerCase().contains(value)) {
+            if (job.getName("name").toLowerCase().contains(value)) {
                 matchingJobs.add(job);
                 continue;
             }
@@ -90,13 +88,13 @@ public class JobData {
     private static JobField getFieldByType(Job job, JobFieldType type) {
         switch(type) {
             case EMPLOYER:
-                return job.getEmployer();
+                return job.getEmployer("employer");
             case LOCATION:
-                return job.getLocation();
+                return job.getLocation("location");
             case CORE_COMPETENCY:
-                return job.getCoreCompetency();
+                return job.getCoreCompetency("coreCompetency");
             case POSITION_TYPE:
-                return job.getPositionType();
+                return job.getPositionType("positionType");
         }
 
         throw new IllegalArgumentException("Cannot get field of type " + type);
