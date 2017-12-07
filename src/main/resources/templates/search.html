@@ -24,11 +24,8 @@
             <label th:for="keyword">Keyword</label>
             <input class="form-control" th:field="*{keyword}" />
         </div>
-
         <input type="submit" value="Search" />
     </form>
-
-    <hr />
 
     <div th:replace="list-jobs :: jobs-list"></div>
 

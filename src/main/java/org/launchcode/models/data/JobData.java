@@ -11,17 +11,14 @@ public class JobData {
 
     private ArrayList<Job> jobs = new ArrayList<>();
     private static JobData instance;
-
     private JobFieldData<Employer> employers = new JobFieldData<>();
     private JobFieldData<Location> locations = new JobFieldData<>();
     private JobFieldData<CoreCompetency> coreCompetencies = new JobFieldData<>();
     private JobFieldData<PositionType> positionTypes = new JobFieldData<>();
 
-
     private JobData() {
         JobDataImporter.loadData(this);
     }
-
 
     public static JobData getInstance() {
         if (instance == null) {
@@ -35,14 +32,12 @@ public class JobData {
             if (job.getId() == id)
                 return job;
         }
-
         return null;
     }
 
     public ArrayList<Job> findAll() {
         return jobs;
     }
-
 
     public ArrayList<Job> findByColumnAndValue(JobFieldType column, String value) {
 
@@ -55,7 +50,6 @@ public class JobData {
 
         return matchingJobs;
     }
-
 
     public ArrayList<Job> findByValue(String value) {
 
@@ -75,15 +69,11 @@ public class JobData {
                 }
             }
         }
-
         return matchingJobs;
     }
-
-
     public void add(Job job) {
         jobs.add(job);
     }
-
 
     private static JobField getFieldByType(Job job, JobFieldType type) {
         switch(type) {
